@@ -7,6 +7,21 @@
   opacity: 0.1;
 }
 
+.tab {
+  padding: 0 8px;
+  margin-bottom: 10px;
+  @media screen and (min-width: 30em) {
+    padding: 0 30px;
+  }
+}
+
+.container {
+  padding: 0 15px 30px;
+  @media screen and (min-width: 30em) {
+    padding: 0 30px 30px;
+  }
+}
+
 .connQty {
   font-family: var(--font-normal);
   font-size: 0.75em;
@@ -20,10 +35,13 @@
 }
 
 .inputWrapper {
-  margin: 0 30px;
+  margin: 0 15px;
   width: 100%;
   max-width: 350px;
   justify-self: flex-end;
+  @media screen and (min-width: 30em) {
+    margin: 0 30px;
+  }
 }
 
 .input {

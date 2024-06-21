@@ -98,7 +98,7 @@ function Logs({ dispatch, logs }: { dispatch: DispatchFn; logs: Log[] }) {
               height={containerHeight - paddingBottom}
               width="100%"
               itemCount={logs.length}
-              itemSize={80}
+              itemSize={70}
               itemData={logs}
               itemKey={itemKey}
             >

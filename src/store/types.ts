@@ -30,6 +30,7 @@ export type ClashGeneralConfig = {
   ipv6?: boolean;
   'mixed-port'?: number;
   'tproxy-port'?: number;
+  singBox?: boolean;
 };
 
 ///// store.proxies

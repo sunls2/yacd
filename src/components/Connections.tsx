@@ -185,7 +185,7 @@ export default function Conn() {
             justifyContent: 'space-between',
           }}
         >
-          <TabList>
+          <TabList className={s.tab}>
             <Tab>
               <span>{t('Active')}</span>
               <span className={s.connQty}>{connQty({ qty: filteredConns.length })}</span>
@@ -206,7 +206,7 @@ export default function Conn() {
             />
           </div>
         </div>
-        <div ref={refContainer} style={{ padding: 30, paddingBottom, paddingTop: 0 }}>
+        <div ref={refContainer} className={s.container}>
           <div
             style={{
               height: containerHeight - paddingBottom,
