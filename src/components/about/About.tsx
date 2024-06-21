@@ -28,11 +28,18 @@ function Version({ name, link, version }: { name: string; link: string; version:
 export function About() {
   const apiConfig = useApiConfig();
   const { data: version } = useQuery(['/version', apiConfig], fetchVersion);
+  const singBox = version.premium && version.meta;
   return (
     <>
       <ContentHeader title="About" />
       {version && version.version ? (
-        <Version name="Clash" version={version.version} link="https://github.com/Dreamacro/clash" />
+        <Version
+          name={singBox ? 'SagerNet' : 'Clash'}
+          version={version.version}
+          link={
+            singBox ? 'https://github.com/SagerNet/sing-box' : 'https://github.com/Dreamacro/clash'
+          }
+        />
       ) : null}
       <Version name="Yacd" version={__VERSION__} link="https://github.com/haishanh/yacd" />
     </>

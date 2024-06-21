@@ -1,5 +1,8 @@
 .RuleSearch {
-  padding: 0 40px 5px;
+  padding: 0 15px 5px;
+  @media screen and (min-width: 30em) {
+    padding: 0 40px 5px;
+  }
 }
 
 .RuleSearchContainer {

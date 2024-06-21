@@ -1,6 +1,7 @@
 import { query, QueryCtx } from './fetch';
 
 type VersionData = {
+  meta?: boolean;
   version?: string;
   premium?: boolean;
 };

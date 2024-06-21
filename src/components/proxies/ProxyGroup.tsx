@@ -11,6 +11,7 @@ import {
   autoCloseOldConnsAtom,
   collapsibleIsOpenAtom,
   hideUnavailableProxiesAtom,
+  latencyTestUrlAtom,
   proxySortByAtom,
 } from '$src/store/app';
 import { getProxies, switchProxy } from '$src/store/proxies';
@@ -71,15 +72,16 @@ function ProxyGroupImpl({
     [apiConfig, dispatch, name, isSelectable, autoCloseOldConns],
   );
 
+  const [latencyTestUrl] = useAtom(latencyTestUrlAtom);
   const testingLatency = useState2(false);
   const testLatency = useCallback(async () => {
     if (testingLatency.value) return;
     testingLatency.set(true);
     try {
-      await requestDelayForProxies(apiConfig, all);
+      await requestDelayForProxies(apiConfig, all, latencyTestUrl);
     } catch (err) {}
     testingLatency.set(false);
-  }, [all, apiConfig, requestDelayForProxies, testingLatency]);
+  }, [all, apiConfig, requestDelayForProxies, testingLatency, latencyTestUrl]);
 
   return (
     <div className={s0.group}>

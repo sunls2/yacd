@@ -38,7 +38,10 @@ export const MB: React.FC<MBProps> = ({ children, ...p }) => (
   </button>
 );
 
-const defaultStyles: React.CSSProperties = { bottom: 24, right: 24 };
+const defaultStyles: React.CSSProperties = {
+  bottom: 24,
+  right: 24,
+};
 
 interface FabProps {
   event?: 'hover' | 'click';

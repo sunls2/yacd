@@ -87,7 +87,7 @@ function Proxies({
         <ContentHeader title={t('Proxies')} />
         <div className={s0.topBarRight}>
           <div className={s0.textFilterContainer}>
-            <TextFilter textAtom={proxyFilterTextAtom} />
+            <TextFilter placeholder="Filter" textAtom={proxyFilterTextAtom} />
           </div>
           <Tooltip label={t('settings')}>
             <Button kind="minimal" onClick={() => setIsSettingsModalOpen(true)}>

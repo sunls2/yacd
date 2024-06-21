@@ -175,19 +175,20 @@ function Config({ configs }: ConfigImplProps) {
     <div>
       <ContentHeader title={t('Config')} />
       <div className={s0.root}>
-        {portFields.map((f) =>
-          configState[f.key] !== undefined ? (
-            <div key={f.key}>
-              <div className={s0.label}>{f.label}</div>
-              <Input
-                name={f.key}
-                value={configState[f.key]}
-                onChange={handleInputOnChange}
-                onBlur={handleInputOnBlur}
-              />
-            </div>
-          ) : null,
-        )}
+        {!configs.singBox &&
+          portFields.map((f) =>
+            configState[f.key] !== undefined ? (
+              <div key={f.key}>
+                <div className={s0.label}>{f.label}</div>
+                <Input
+                  name={f.key}
+                  value={configState[f.key]}
+                  onChange={handleInputOnChange}
+                  onBlur={handleInputOnBlur}
+                />
+              </div>
+            ) : null,
+          )}
 
         <div>
           <div className={s0.label}>Mode</div>
@@ -198,23 +199,27 @@ function Config({ configs }: ConfigImplProps) {
           />
         </div>
 
-        <div>
-          <div className={s0.label}>Log Level</div>
-          <Select
-            options={logLeveOptions}
-            selected={configState['log-level']}
-            onChange={(e) => handleChangeValue({ name: 'log-level', value: e.target.value })}
-          />
-        </div>
+        {!configs.singBox && (
+          <div>
+            <div className={s0.label}>Log Level</div>
+            <Select
+              options={logLeveOptions}
+              selected={configState['log-level']}
+              onChange={(e) => handleChangeValue({ name: 'log-level', value: e.target.value })}
+            />
+          </div>
+        )}
 
-        <div className={s0.item}>
-          <ToggleInput
-            id="config-allow-lan"
-            checked={configState['allow-lan']}
-            onChange={handleSwitchOnChange}
-          />
-          <label htmlFor="config-allow-lan">Allow LAN</label>
-        </div>
+        {!configs.singBox && (
+          <div className={s0.item}>
+            <ToggleInput
+              id="config-allow-lan"
+              checked={configState['allow-lan']}
+              onChange={handleSwitchOnChange}
+            />
+            <label htmlFor="config-allow-lan">Allow LAN</label>
+          </div>
+        )}
       </div>
 
       <div className={s0.sep}>

@@ -24,16 +24,18 @@ const defaultState: StateApp = {
   selectedClashAPIConfigIndex: 0,
   clashAPIConfigs: [defaultClashAPIConfig],
 
-  latencyTestUrl: 'http://www.gstatic.com/generate_204',
-  selectedChartStyleIndex: 0,
-  theme: 'dark',
+  latencyTestUrl: 'https://captive.apple.com',
+  selectedChartStyleIndex: 2,
+  theme: 'auto',
 
   // type { [string]: boolean }
-  collapsibleIsOpen: {},
+  collapsibleIsOpen: {
+    'proxyGroup:PROXY': true,
+  },
   // how proxies are sorted in a group or provider
   proxySortBy: 'Natural',
   hideUnavailableProxies: false,
-  autoCloseOldConns: false,
+  autoCloseOldConns: true,
   logStreamingPaused: false,
 };
 

@@ -1,12 +1,13 @@
 .TrafficNow {
   color: var(--color-text);
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
 
+  align-items: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 180px);
   grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 180px);
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, minmax(160px, 180px));
+  }
 
   .sec {
     padding: 10px;

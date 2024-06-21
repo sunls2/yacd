@@ -9,10 +9,10 @@
   color: #eee;
   flex-shrink: 0;
   text-align: center;
-  width: 66px;
-  border-radius: 100px;
-  padding: 3px 5px;
+  width: 60px;
+  border-radius: 20px;
   margin: 0 8px;
+  line-height: 1.3;
 }
 
 .logTime {
@@ -42,8 +42,11 @@
 
   :global {
     .log {
-      padding: 10px 40px;
+      padding: 10px 15px;
       background: var(--color-background);
+      @media screen and (min-width: 30em) {
+        padding: 10px 40px;
+      }
     }
     .log.even {
       background: var(--color-background);
